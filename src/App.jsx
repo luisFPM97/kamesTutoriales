@@ -9,18 +9,24 @@ import Navbar from './components/navBar/Navbar'
 import Login from './components/login/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [showRegister, setShowRegister] = useState(false)
+  console.log(showRegister)
   return (
     <div className='app'>
-        <Navbar/>
+        <Navbar
+          setShowRegister={setShowRegister}
+        />
+        <Register
+          setShowRegister={setShowRegister}
+          showRegister={showRegister}
+        />
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
         </Routes>
         <footer>
-          
+
         </footer>
     </div>
   )

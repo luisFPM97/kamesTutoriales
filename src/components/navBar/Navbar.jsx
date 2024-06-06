@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({setShowRegister}) => {
+
+    function showreg(params) {
+        setShowRegister(true)
+    }
+
   return (
     <div className='navBar'>
         <div className='logoHome'>
@@ -25,8 +30,8 @@ const Navbar = () => {
             </div>
             <div className='navPages'>
                 <Link className='home' to='/'>INICIO</Link>
-                <Link className='login' to='/login'>INGRESAR</Link>
-                <Link className='register' to='/register'>REGISTRARSE</Link>
+                <Link className='login' to='/' >INGRESAR</Link>
+                <Link className='register' to='/' onClick={showreg}>REGISTRARSE</Link>
             </div>
         </div>
     </div>

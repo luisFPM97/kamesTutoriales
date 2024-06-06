@@ -8,7 +8,7 @@ const Home = () => {
                 <h1>KAMES ACADEMY</h1>  
                 <div className='inputs'>
                     <input type="text" />
-                    <span><i class='bx bx-search'></i></span>
+                    <span><i className='bx bx-search'></i></span>
                 </div>
             </div>
             <div className='programs'>
