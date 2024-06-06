@@ -10,15 +10,21 @@ import Login from './components/login/Login'
 
 function App() {
   const [showRegister, setShowRegister] = useState(false)
+  const [showLogin, setShowLogin] = useState(false)
   console.log(showRegister)
   return (
     <div className='app'>
         <Navbar
           setShowRegister={setShowRegister}
+          setShowLogin={setShowLogin}
         />
         <Register
           setShowRegister={setShowRegister}
           showRegister={showRegister}
+        />
+        <Login
+          setShowLogin={setShowLogin}
+          showLogin={showLogin}
         />
         <Routes>
           <Route path='/' element={<Home/>}/>

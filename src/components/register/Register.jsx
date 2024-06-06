@@ -18,6 +18,10 @@ const Register = ({showRegister, setShowRegister}) => {
           <input type="email" placeholder='Correo electrónico'/>
           <input type="password" placeholder='Contraseña'/>
           <button>EMPEZAR AHORA</button>
+          <div className='terms'>
+            <input type="checkbox" id="miCheckbox" name="miCheckbox"/>
+            <p>Acepto los Términos, Condiciones y Políticas de Tutoriales Kames</p>
+          </div>
         </section>
         <i className='bx bx-x' onClick={regfalse}></i>
       </div>
