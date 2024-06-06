@@ -385,11 +385,13 @@
       width: 60%;
       height: 100%;
       display: flex;
-      gap: 20px;
+      gap: 15px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
+      h1{
+        font-size: 35px;
+      }
       input{
         width: 65%;
         background-color: white;

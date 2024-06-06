@@ -13,6 +13,7 @@ const Register = ({showRegister, setShowRegister}) => {
           <img src="/img/logoalfa.png" alt="" />
         </div>
         <section className='form'>
+          <h1>Únete ahora</h1>
           <input type="text" placeholder='Nombre'/>
           <input type="text" placeholder='Apellido'/>
           <input type="email" placeholder='Correo electrónico'/>
