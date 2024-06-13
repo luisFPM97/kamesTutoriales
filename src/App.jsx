@@ -1,36 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
-import { Route, Router, Routes } from 'react-router-dom'
+import { HashRouter, Route, RouterProvider, Routes } from 'react-router-dom'
 import Home from './components/home/Home'
 import Register from './components/register/Register'
 import Navbar from './components/navBar/Navbar'
 import Login from './components/login/Login'
+import { useDispatch, useSelector } from 'react-redux'
+import { authenticateThunk } from './components/authSlice'
+import router from './reuter'
+import HomeAcademy from './components/academy/HomeAcademy'
+import HomePage from './components/home/HomePage'
 
 function App() {
-  const [showRegister, setShowRegister] = useState(false)
-  const [showLogin, setShowLogin] = useState(false)
-  console.log(showRegister)
+  const dispatch = useDispatch()
+  const authStatus  = useSelector(state => state.auth);
+  
+  
+
+  useEffect(() => {
+    dispatch(authenticateThunk());
+}, [ dispatch ]);
+
+
+
   return (
     <div className='app'>
-        <Navbar
-          setShowRegister={setShowRegister}
-          setShowLogin={setShowLogin}
-        />
-        <Register
-          setShowRegister={setShowRegister}
-          showRegister={showRegister}
-        />
-        <Login
-          setShowLogin={setShowLogin}
-          showLogin={showLogin}
-        />
+      
+        <RouterProvider router={router} />
+        <HashRouter>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<HomePage/>}/>
           <Route path='/register' element={<Register/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route path='/login/home' element={<Login />}/>
+          <Route path='/academy' element={<HomeAcademy/>}/>
         </Routes>
+        </HashRouter>
         <footer>
 
         </footer>

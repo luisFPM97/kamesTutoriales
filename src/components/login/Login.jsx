@@ -1,9 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import { setAuth, setToken } from '../authSlice';
+import axios from '../../utils/axios';
+
 
 const Login = ({setShowLogin, showLogin}) => {
 
   function logFalse() {
     setShowLogin(false)
+  }
+  const { handleSubmit, register } = useForm();
+  const [ isLoading, setIsLoading ] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const submit = async data => {
+    setIsLoading(true);
+    try {
+      const url ='http://localhost:8080/users/login'
+      const res = await axios.post('/users/login', data);
+      dispatch(setToken(res.data.token));
+      dispatch(setAuth({
+        ...res.data, authStatus: 'authenticated'
+      }));
+      console.log(res.data)
+      navigate('/academy');
+    } catch (error) {
+      if(error.response.status === 401) {
+        dispatch(showNotification({
+          variant: "danger",
+          message: "Invalid credentials",
+        }));
+      }
+    } finally { setIsLoading(false); }
   }
 
   return (
@@ -12,11 +43,11 @@ const Login = ({setShowLogin, showLogin}) => {
         <div className='img'>
           <img src="/img/logoalfa.png" alt="" />
         </div>
-        <section className='form'>
-          <input type="email" placeholder='Correo electrónico'/>
-          <input type="password" placeholder='Contraseña'/>
-          <button>EMPEZAR AHORA</button>
-        </section>
+        <form className='form' onSubmit={handleSubmit(submit)}>
+          <input type="email" placeholder='Correo electrónico' {...register("email")}/>
+          <input type="password" placeholder='Contraseña' {...register("password")}/>
+          <button type='submit'>EMPEZAR AHORA</button>
+        </form>
         <i className='bx bx-x' onClick={logFalse}></i>
       </div>
     </div>

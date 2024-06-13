@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
+import { useDispatch } from "react-redux";
+import { showNotification } from "../notifications/notificationSlice";
+import { Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 const Register = ({ showRegister, setShowRegister }) => {
   function regfalse() {
@@ -15,20 +20,29 @@ const Register = ({ showRegister, setShowRegister }) => {
   } = useForm(); // Destructure formState for errors
 
   const { registerUser } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const submit = (data) => {
-      data.terms=true
-      registerUser(data);
-      alert("Usuario Registrado Correctamete");
-      reset({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        country: "",
-        image: "",
-        terms: false, // Reset terms to unchecked state (optional)
-      });
+  const submit = async userData => {
+    const url ='http://localhost:8080/users'
+    userData.terms=true
+      const frontBaseUrl = `${location.protocol}//${location.host}/auth/verify_email`;
+      console.log(frontBaseUrl)
+      const body ={...userData, frontBaseUrl}
+      console.log(body)
+      setIsLoading(true)
+      try{
+        await axios.post(url, body);
+        navigate('/');
+        dispatch(showNotification({
+          header: 'Cuenta Creada',
+          message: `Un email fue enviado a ${body.emmail} con las instrucciones para crear tu cuenta`,
+          variant: 'succes',
+        }))
+      }finally{
+        setIsLoading(false)
+      }
     
   };
 
