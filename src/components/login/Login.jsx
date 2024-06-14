@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { setAuth, setToken } from '../authSlice';
 import axios from '../../utils/axios';
+import { showNotification } from '../notifications/notificationSlice';
 
 
 const Login = ({setShowLogin, showLogin}) => {
