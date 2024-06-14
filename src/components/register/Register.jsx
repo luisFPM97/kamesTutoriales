@@ -25,7 +25,7 @@ const Register = ({ showRegister, setShowRegister }) => {
   const navigate = useNavigate();
 
   const submit = async userData => {
-    const url ='http://localhost:8080/users'
+    const url ='https://entregable4node.onrender.com'
     userData.terms=true
       const frontBaseUrl = `${location.protocol}//${location.host}/auth/verify_email`;
       console.log(frontBaseUrl)
