@@ -10,6 +10,8 @@ import { showNotification } from '../notifications/notificationSlice';
 
 const Login = ({setShowLogin, showLogin}) => {
 
+  
+
   function logFalse() {
     setShowLogin(false)
   }
@@ -17,6 +19,8 @@ const Login = ({setShowLogin, showLogin}) => {
   const [ isLoading, setIsLoading ] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+
   const submit = async data => {
     setIsLoading(true);
     try {
@@ -25,8 +29,8 @@ const Login = ({setShowLogin, showLogin}) => {
       dispatch(setAuth({
         ...res.data, authStatus: 'authenticated'
       }));
-      
       navigate('/academy/home');
+      setShowLogin(false)
     } catch (error) {
       if(error.response.status === 401) {
         dispatch(showNotification({
