@@ -1,14 +1,25 @@
+import AllUsers from "./academy/AllUsers";
 import HomeAcademy from "./academy/HomeAcademy";
-import Home from "./home/Home";
+import MePage from "./academy/MePage";
+import AdminRole from "./academy/superAdmin/AdminRole";
+import ProtectedRoute from "./protectedRouter/ProtectedRoute";
 
 const userRouter = {
-    path: "/academy",
-    element: <HomeAcademy/>,
+    path: "academy",
+    element: <ProtectedRoute><HomeAcademy/></ProtectedRoute>,
     children: [
         {
             path: "home",
-            element: <Home />,
+            element: <AllUsers />,
         },
+        {
+            path: "me",
+            element: <MePage />,
+        },
+        {
+            path:"admin_roles",
+            element: <AdminRole/>
+        }
     ]
 }
 

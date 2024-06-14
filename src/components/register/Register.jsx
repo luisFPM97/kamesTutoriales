@@ -34,7 +34,7 @@ const Register = ({ showRegister, setShowRegister }) => {
       setIsLoading(true)
       try{
         await axios.post(url, body);
-        navigate('/');
+        navigate('/auth/Home');
         dispatch(showNotification({
           header: 'Cuenta Creada',
           message: `Un email fue enviado a ${body.emmail} con las instrucciones para crear tu cuenta`,

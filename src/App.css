@@ -529,4 +529,27 @@
   align-items: center;
   color: white;
 }
+/*academy*/
+/*adminroles*/
+.adminRoles{
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cardUserAdmin{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    input{
+      width: 30px;
+    }
+  }
+}
 

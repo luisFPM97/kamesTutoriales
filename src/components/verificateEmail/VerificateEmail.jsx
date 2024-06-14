@@ -25,16 +25,18 @@ const VerificateEmail = () => {
 
     if(verifiedStatus === 'verified') {
         return (
+            
             <div className='text-center '>
                 
-                <div className="icon icon-error mb-5">
-                    <i className="fa-solid fa-times"></i>
-                </div>
-                <h1 className='mb-3'>There was an error</h1>
-                <p>
-                    <Link to="/">Login</Link> 
-                </p>
+            <div className="icon icon-success mb-5">
+                <i className="fa-solid fa-check"></i>
             </div>
+            <h1 className='mb-3'>User verified!</h1>
+            <p>
+                <Link to="/">Login</Link> {" "}
+                with your credentials to enter the app
+            </p>
+        </div>
         )
     }
 
@@ -43,13 +45,12 @@ const VerificateEmail = () => {
         return (
             <div className='text-center '>
                 
-                <div className="icon icon-success mb-5">
-                    <i className="fa-solid fa-check"></i>
+                <div className="icon icon-error mb-5">
+                    <i className="fa-solid fa-times"></i>
                 </div>
-                <h1 className='mb-3'>User verified!</h1>
+                <h1 className='mb-3'>There was an error</h1>
                 <p>
-                    <Link to="/auth/login">Login</Link> {" "}
-                    with your credentials to enter the app
+                    <Link to="/">Login</Link> 
                 </p>
             </div>
         )

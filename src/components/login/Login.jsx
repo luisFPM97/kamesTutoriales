@@ -19,14 +19,13 @@ const Login = ({setShowLogin, showLogin}) => {
   const submit = async data => {
     setIsLoading(true);
     try {
-      const url ='http://localhost:8080/users/login'
       const res = await axios.post('/users/login', data);
       dispatch(setToken(res.data.token));
       dispatch(setAuth({
         ...res.data, authStatus: 'authenticated'
       }));
-      console.log(res.data)
-      navigate('/academy');
+      
+      navigate('/academy/home');
     } catch (error) {
       if(error.response.status === 401) {
         dispatch(showNotification({

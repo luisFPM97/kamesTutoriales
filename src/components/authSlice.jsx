@@ -11,6 +11,11 @@ export const authSlice = createSlice({
     },
     reducers: {
         setAuth: (_, { payload }) => payload,
+        
+        setToken: (state, { payload: token }) => {
+            localStorage.setItem('token', token);
+            state.token = token;
+        },
         logout: () => {
             localStorage.setItem('token', '');
             return {
@@ -19,10 +24,6 @@ export const authSlice = createSlice({
                 token: '',
             }
         },
-        setToken: (state, { payload: token }) => {
-            localStorage.setItem('token', token);
-            state.token = token;
-        }
     }
 })
 
