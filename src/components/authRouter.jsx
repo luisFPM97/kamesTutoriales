@@ -2,6 +2,7 @@ import AuthLayout from './pages/AuthLayout/AuthLayout';
 import Register from './register/Register';
 import VerificateEmail from './verificateEmail/VerificateEmail';
 import Home from './home/Home';
+import HomePage from './home/HomePage'
 
 const authRouter = {
     path: "auth",
@@ -9,7 +10,7 @@ const authRouter = {
     children: [
         {
             path: "home",
-            element: <Home />,
+            element: <HomePage />,
         },
         {
             path: "signup",

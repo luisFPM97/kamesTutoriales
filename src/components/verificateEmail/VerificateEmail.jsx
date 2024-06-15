@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap';
-import axios from 'axios';
+import axios from '../../utils/axios';
+
 
 
 
@@ -12,7 +13,7 @@ const VerificateEmail = () => {
     const [ verifiedStatus, setVerifiedStatus ] = useState('loading'); // 'loading' | 'verified' | 'notVerified'
 
     useEffect(() => {
-        axios.get(`${url}${emailCode}`)
+        axios.get(`/users/verify/${emailCode}`)
             .then(() => setVerifiedStatus('verified'))
             .catch(() => {
                 setVerifiedStatus('notVerified')

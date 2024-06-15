@@ -550,6 +550,17 @@
     input{
       width: 30px;
     }
+    .upUser{
+      position: fixed;
+      width: 400px;
+      height: 200px;
+      background-color: #272727;
+      border-radius: 20px;
+      visibility: visible;
+    }
+    .usHide{
+      visibility: hidden;
+    }
   }
 }
 

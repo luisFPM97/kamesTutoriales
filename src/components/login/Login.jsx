@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
 import { setAuth, setToken } from '../authSlice';
 import axios from '../../utils/axios';
 import { showNotification } from '../notifications/notificationSlice';

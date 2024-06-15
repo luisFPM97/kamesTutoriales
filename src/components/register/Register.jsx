@@ -4,7 +4,10 @@ import useAuth from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { showNotification } from "../notifications/notificationSlice";
 import { Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../utils/axios";
+
+
+
 
 
 const Register = ({ showRegister, setShowRegister }) => {
@@ -33,7 +36,7 @@ const Register = ({ showRegister, setShowRegister }) => {
       console.log(body)
       setIsLoading(true)
       try{
-        await axios.post(url, body);
+        await axios.post('/users', body);
         navigate('/auth/Home');
         dispatch(showNotification({
           header: 'Cuenta Creada',
