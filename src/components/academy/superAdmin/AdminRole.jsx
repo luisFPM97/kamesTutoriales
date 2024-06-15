@@ -10,7 +10,7 @@ const AdminRole = () => {
         axios.get('/users')
           .then(res => setUsers(res.data));
       }, []);
-      console.log(users)
+      
 
   return (
     <div className='adminRoles'>

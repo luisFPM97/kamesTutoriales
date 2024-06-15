@@ -24,10 +24,10 @@ const userCardAdmin = ({user}) => {
     axios.get(`/users/${user.id}`)
       .then(res => setUs(res.data));
   }, []);
-  console.log(us)
+  
   const handleRoleChange = ( userId, newRole) => {
     setSelectedRole(parseInt(newRole));
-    console.log(newRole) // Update state with the selected role
+     // Update state with the selected role
     // Call a function (e.g., handleRoleUpdate) to perform the actual update (explained below)
     setRol(listRol[newRole])
     if (newRole==="") {
@@ -49,12 +49,9 @@ const userCardAdmin = ({user}) => {
     }
   };
         const submit = async (data) =>{
-          console.log(data)
-          console.log(user.id)
-          console.log(selectedRole)
-          console.log(`/users/${user?.id}`)
+          
           setMConfirm(true)
-          console.log(mConfirm)
+          
           try {
             axios.put(`/users/${user.id}`, { role: selectedRole });
             try{

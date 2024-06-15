@@ -4,9 +4,6 @@ import { Link, NavLink } from 'react-router-dom'
 import { logout } from '../authSlice'
 
 const NavBarSA = ({me}) => {
-    console.log(me)
-    
-
     const dispatch = useDispatch()
 
     function showreg() {
