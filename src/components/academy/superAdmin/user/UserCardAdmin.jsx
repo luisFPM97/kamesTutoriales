@@ -43,6 +43,10 @@ const userCardAdmin = ({user}) => {
           if (newRole==="3") {
             setRoll("Administrador")
           }else{
+            if (newRole==="0") {
+              setRoll("inactivo")
+            }else{
+            }
           }
         }
       }
@@ -79,7 +83,7 @@ const userCardAdmin = ({user}) => {
           value={selectedRole}
           onChange={(event) => handleRoleChange(user.id, event.target.value)}
         >
-          <option value={0}>Seleccionar rol</option>
+          <option value={0}>Desactivar usuario</option>
           <option value={1}>Estudiante</option>
           <option value={2}>Profesor</option>
           <option value={3}>Administrador</option>

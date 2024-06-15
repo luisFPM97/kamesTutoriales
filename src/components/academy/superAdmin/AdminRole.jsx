@@ -86,6 +86,26 @@ const AdminRole = () => {
       <div className='footerTable'>
       <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole}>Actualizar roles</Link>
       </div>
+      <span className='Subtitle'>Usuarios inactivos</span>
+      <div className='encabezado'>
+          <span className='nombre'> Usuario</span>
+          <span className='correo'>Correo Electrónico</span>
+          <span className='rol'>Rol</span>
+          <span className='actRol'>Actualizar Rol</span>
+      </div>
+      {
+        users.filter((user) => user.role === 0).map((user, index) => (
+          <UserCardAdmin
+            key={index}
+            user={user}
+            users={users} 
+            setUsers={setUsers} 
+          />
+        ))
+      }
+      <div className='footerTable'>
+      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole}>Actualizar roles</Link>
+      </div>
     </div>
   )
 }
