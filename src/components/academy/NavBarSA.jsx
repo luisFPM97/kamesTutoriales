@@ -39,6 +39,7 @@ const NavBarSA = ({me}) => {
                 <Link className='home' to='/academy/home'>INICIO</Link>
                 <Link className='login' to='/academy/me' >{me?.firstName} {me?.lastName}</Link>
                 <Link className='login' to='/academy/admin_roles' >Administrar roles</Link>
+                <Link className='login' to='/academy/admin_Categorias' >Administrar Categorias</Link>
                 <Link className='login' to='/' onClick={() => dispatch(logout())}>Cerrar sesion</Link>
                 
             </div>
