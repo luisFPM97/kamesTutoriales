@@ -8,7 +8,7 @@ const ConfirmUpdate = ({mConfirm, setMConfirm}) => {
 
     const handleClose = () => {
         setMConfirm(false)
-        window.location.reload();
+        
       };
 
   return (
