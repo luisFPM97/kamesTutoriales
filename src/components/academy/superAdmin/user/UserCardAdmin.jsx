@@ -12,6 +12,7 @@ import ConfirmUpdate from './ConfirmUpdate';
 
 const userCardAdmin = ({user}) => {
 
+  const [us, setUs] = useState(user)
   const { handleSubmit, register, reset, formState: { errors } } = useForm()
   const [selectedRole, setSelectedRole] = useState(user.role || ''); // Initialize selectedRole with user's role or empty string
   const [roll, setRoll] = useState("")
@@ -19,6 +20,11 @@ const userCardAdmin = ({user}) => {
   const [rol, setRol] = useState(0)
   const listRol = ['null','Estudiante','Profesor','Administrador'];
   
+  useEffect(() => {
+    axios.get(`/users/${user.id}`)
+      .then(res => setUs(res.data));
+  }, []);
+  console.log(us)
   const handleRoleChange = ( userId, newRole) => {
     setSelectedRole(parseInt(newRole));
     console.log(newRole) // Update state with the selected role
@@ -51,22 +57,25 @@ const userCardAdmin = ({user}) => {
           console.log(mConfirm)
           try {
             axios.put(`/users/${user.id}`, { role: selectedRole });
-            
+            try{
+              axios.get(`/users/${user.id}`)
+            .then(res => setUs(res.data));
+            }catch (error) {
+              console.error('Error updating resource:', error);
+            }
           } catch (error) {
             console.error('Error updating resource:', error);
           }
           
+          
         } 
   return (
     <div className='cardUserAdmin'>
-      <ConfirmUpdate
-      mConfirm={mConfirm}
-      setMConfirm={setMConfirm}
-      />
-      <h2>{user.firstName} {user.lastName}</h2>
+      
+      <h2>{us.firstName} {us.lastName}</h2>
       <span>{user.id}</span>
       <p>Correo electrónico:  {user.email}</p>
-      <span>{listRol[user.role]}</span>
+      <span>{listRol[us.role]}</span>
       <span>{`Rol: ${roll}`}</span>
       <form action="" onSubmit={handleSubmit(submit)}>
       <input  type="text" placeholder={user.role} value={selectedRole} readOnly id='input' {...register("role")}/>
@@ -81,7 +90,7 @@ const userCardAdmin = ({user}) => {
         <option value={2}>Profesor</option>
         <option value={3}>Administrador</option>
       </select>
-      {selectedRole ===user.role  ?
+      {selectedRole ===us.role  ?
         <span></span> : <button onClick={submit}>Update</button>
        }
       </form>
