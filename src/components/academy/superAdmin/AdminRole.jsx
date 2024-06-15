@@ -44,7 +44,7 @@ const AdminRole = () => {
         ))
       }
       <div className='footerTable'>
-      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole}>Administrar roles</Link>
+      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole}>Actualizar roles</Link>
       </div>
       <span className='Subtitle'>Profesores</span>
       <div className='encabezado'>
@@ -64,7 +64,7 @@ const AdminRole = () => {
         ))
       }
       <div className='footerTable'>
-      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole} >Administrar roles</Link>
+      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole} >Actualizar roles</Link>
       </div>
       <span className='Subtitle'>Estudiantes</span>
       <div className='encabezado'>
@@ -84,7 +84,7 @@ const AdminRole = () => {
         ))
       }
       <div className='footerTable'>
-      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole}>Administrar roles</Link>
+      <Link className='actualizar' to='/academy/admin_roles' onClick={changeRole}>Actualizar roles</Link>
       </div>
     </div>
   )
