@@ -68,28 +68,25 @@ const userCardAdmin = ({user}) => {
         } 
   return (
     <div className='cardUserAdmin'>
-      
-      <h2>{us.firstName} {us.lastName}</h2>
-      <span>{user.id}</span>
-      <p>Correo electrónico:  {user.email}</p>
-      <span>{listRol[us.role]}</span>
-      <span>{`Rol: ${roll}`}</span>
+        <h2>{us.firstName} {us.lastName}</h2>
+        <p>{user.email}</p>
+        <span className='userRoleS'>{listRol[us.role]}</span>
       <form action="" onSubmit={handleSubmit(submit)}>
-      <input  type="text" placeholder={user.role} value={selectedRole} readOnly id='input' {...register("role")}/>
-      <select
-        name="mySelect"
-        id={user.id}
-        value={selectedRole}
-        onChange={(event) => handleRoleChange(user.id, event.target.value)}
-      >
-        <option value={0}>Seleccionar rol</option>
-        <option value={1}>Estudiante</option>
-        <option value={2}>Profesor</option>
-        <option value={3}>Administrador</option>
-      </select>
-      {selectedRole ===us.role  ?
-        <span></span> : <button onClick={submit}>Update</button>
-       }
+        <input  type="text" placeholder={user.role} value={selectedRole} readOnly id='input' {...register("role")}/>
+        <select
+          name="mySelect"
+          id={user.id}
+          value={selectedRole}
+          onChange={(event) => handleRoleChange(user.id, event.target.value)}
+        >
+          <option value={0}>Seleccionar rol</option>
+          <option value={1}>Estudiante</option>
+          <option value={2}>Profesor</option>
+          <option value={3}>Administrador</option>
+        </select>
+        {selectedRole ===us.role  ?
+          <span></span> : <button onClick={submit}>Update</button>
+        }
       </form>
     </div>
   )

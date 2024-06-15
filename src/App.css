@@ -532,26 +532,110 @@
 /*academy*/
 /*adminroles*/
 .adminRoles{
+  padding-top: 100px;
   width: 100%;
   height: auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  .cardUserAdmin{
-    width: 300px;
+  .Subtitle{
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+  .encabezado{
+    width: 900px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 30px;
+    font-size: 21px;
+    
+    .nombre{
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+    .correo{
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+    .rol{
+      width: 16.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+    .actRol{
+      width: 16.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+  }
+  .cardUserAdmin{
+    width: 900px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    h2{
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+    
+    p{
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+    .userRoleS{
+      width: 16.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+    }
+    form{
+      width: 16.5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      height: 100%;
+      input{
+        visibility: hidden;
+        height: 0px;
+      }
+    }
     input{
       width: 30px;
     }
     .upUser{
       position: fixed;
+      
       width: 400px;
       height: 200px;
       background-color: #272727;
@@ -560,6 +644,20 @@
     }
     .usHide{
       visibility: hidden;
+    }
+  }
+  .footerTable{
+    width: 900px;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    .actualizar{
+      width: 16.5%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color:#ffc000;
     }
   }
 }
