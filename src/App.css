@@ -29,10 +29,10 @@
   justify-content: space-between;
   align-items: center;
   height: auto;
+  user-select: none;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   .logoHome{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    
     .linkLogo{
       padding-left: 50px;
       img{
@@ -60,6 +60,10 @@
       display: flex;
       gap: 20px;
       .home{
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
       }
       .register{
@@ -68,6 +72,9 @@
         font-weight: bold;
         width: 150px;
         border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .login{
         width: 150px;
@@ -76,8 +83,13 @@
         border: 2px solid yellow;
         color: white;
         background-color: #272727;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50px;
       }
       .menu{
+        font-weight: bold;
         display: flex;
         flex-direction: column;
         position: relative;
