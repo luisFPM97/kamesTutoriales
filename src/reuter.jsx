@@ -12,9 +12,7 @@ import allRouter from "./components/allRouter";
 const router = createBrowserRouter([
     authRouter,
     userRouter,
-    allRouter,
-    
-      
+    allRouter
 ]);
 
 export default router;
