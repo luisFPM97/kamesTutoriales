@@ -28,6 +28,7 @@ const CreateCategoria = ({setConsCat}) => {
     <div className='createCategoria'>
         <h1>Crear Categoria</h1>
         <form action=""  onSubmit={handleSubmit(submit)}>
+          <span>a</span>
             <label for="nombre">Nombre:</label><br />
             <input type="text" id="nombre" name="nombre" {...register("name", {required: true})}/>
             <br />
