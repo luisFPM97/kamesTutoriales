@@ -11,25 +11,32 @@ const AdminCategoria = () => {
     console.log(consCat)
 
     useEffect(() => {
-    if(consCat){
-        axios.get('/categorias')
-        .then(res => setCategorias(res.data));
-        setConsCat(false)
-    }else{
-        axios.get('/categorias')
-        .then(res => setCategorias(res.data));
-    }
-    }, [consCat])
+        if (consCat) {
+          axios.get('/categorias')
+            .then(res => {
+              const categoriasOrdenadas = res.data.sort((a, b) => a.id - b.id);
+              setCategorias(categoriasOrdenadas);
+            });
+          setConsCat(false);
+        } else {
+          axios.get('/categorias')
+            .then(res => {
+              const categoriasOrdenadas = res.data.sort((a, b) => a.id - b.id);
+              setCategorias(categoriasOrdenadas);
+            });
+        }
+      }, [consCat]);
     console.log(categorias)
 
     
 
   return (
     <div className='adminCategorias'>
-        <div className='catsCont'>
-            <CreateCategoria
+        <CreateCategoria
                 setConsCat={setConsCat}
             />
+        <div className='catsCont'>
+            
             <h1>Administrar Categorias</h1>
             
             <div className='catEncabezado'><span className='nombre'>Nombre</span><span className='descripcion'>Descripcion</span></div>

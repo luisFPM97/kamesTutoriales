@@ -3,6 +3,8 @@ import HomeAcademy from "./academy/HomeAcademy";
 import MePage from "./academy/MePage";
 import AdminCategoria from "./academy/superAdmin/AdminCategoria";
 import AdminRole from "./academy/superAdmin/AdminRole";
+import AdministrarCursos from "./academy/superAdmin/AdministrarCursos";
+import Home from "./home/Home";
 import ProtectedRoute from "./protectedRouter/ProtectedRoute";
 
 const userRouter = {
@@ -11,7 +13,7 @@ const userRouter = {
     children: [
         {
             path: "home",
-            element: <AllUsers />,
+            element: <Home />,
         },
         {
             path: "me",
@@ -24,6 +26,10 @@ const userRouter = {
         {
             path:"admin_Categorias",
             element: <AdminCategoria/>
+        },
+        {
+            path:"admin_cursos",
+            element: <AdministrarCursos/>
         }
     ]
 }
