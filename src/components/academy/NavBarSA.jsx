@@ -21,9 +21,10 @@ const NavBarSA = ({me}) => {
   return (
     <div className='navBar'>
         <div className='logoHome'>
-            <Link className='linkLogo' to='/'><img src="/img/logoH.png" alt="" /></Link>
+            <Link className='linkLogo' to='/'><img src="/img/logoalfa.png" alt="" /></Link>
         </div>
-        <span>{roles[me?.role]}</span>
+        
+        <b>{roles[me?.role]}</b>
         
         <div className='pagesSec'>
             <div className='navPages'>
@@ -33,9 +34,9 @@ const NavBarSA = ({me}) => {
                     <div className='menu'>
                         <span className='btncolAdnmin login' onClick={collapse}>Recursos<i className={collapseM ? 'bx bx-chevron-right' :'bx bx-chevron-down'}></i></span>
                         <div className={collapseM ? 'contenedor Collapse' : 'contenedor Expand'}>
-                        <Link className='login' to='/academy/home' onClick={collapse}>Cursos</Link>
-                        <Link className='login' to='/academy/Home' onClick={collapse}>Tutoriales</Link>
-                        <Link className='login' to='/academy/Home' onClick={collapse}>Descargas</Link>
+                        <Link className='login' to='/academy/me' onClick={collapse}>Cursos</Link>
+                        <Link className='login' to='/academy/me' onClick={collapse}>Tutoriales</Link>
+                        <Link className='login' to='/academy/me' onClick={collapse}>Descargas</Link>
                         </div>
                     </div>
                 )}
