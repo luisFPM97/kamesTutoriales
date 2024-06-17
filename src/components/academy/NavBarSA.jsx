@@ -29,16 +29,26 @@ const NavBarSA = ({me}) => {
             <div className='navPages'>
                 <Link className='home' to='/academy/home'>INICIO</Link>
                 <Link className='login' to='/academy/me' >{me?.firstName} {me?.lastName}</Link>
+                {roles[me?.role] === 'ESTUDIANTE' && (
+                    <div className='menu'>
+                        <span className='btncolAdnmin login' onClick={collapse}>Recursos<i className={collapseM ? 'bx bx-chevron-right' :'bx bx-chevron-down'}></i></span>
+                        <div className={collapseM ? 'contenedor Collapse' : 'contenedor Expand'}>
+                        <Link className='login' to='/academy/home' onClick={collapse}>Cursos</Link>
+                        <Link className='login' to='/academy/Home' onClick={collapse}>Tutoriales</Link>
+                        <Link className='login' to='/academy/Home' onClick={collapse}>Descargas</Link>
+                        </div>
+                    </div>
+                )}
                 {roles[me?.role] === 'ADMINISTRADOR' && (
-          <div className='menu'>
-            <span className='btncolAdnmin login' onClick={collapse}>Administrar<i className={collapseM ? 'bx bx-chevron-right' :'bx bx-chevron-down'}></i></span>
-            <div className={collapseM ? 'contenedor Collapse' : 'contenedor Expand'}>
-              <Link className='login' to='/academy/admin_roles' onClick={collapse}>Administrar roles</Link>
-              <Link className='login' to='/academy/admin_Categorias' onClick={collapse}>Administrar Categorias</Link>
-              <Link className='login' to='/academy/admin_cursos' onClick={collapse}>Cursos</Link>
-            </div>
-          </div>
-        )}
+                    <div className='menu'>
+                        <span className='btncolAdnmin login' onClick={collapse}>Administrar<i className={collapseM ? 'bx bx-chevron-right' :'bx bx-chevron-down'}></i></span>
+                        <div className={collapseM ? 'contenedor Collapse' : 'contenedor Expand'}>
+                        <Link className='login' to='/academy/admin_roles' onClick={collapse}>Administrar roles</Link>
+                        <Link className='login' to='/academy/admin_Categorias' onClick={collapse}>Administrar Categorias</Link>
+                        <Link className='login' to='/academy/admin_cursos' onClick={collapse}>Cursos</Link>
+                        </div>
+                    </div>
+                )}
                 <Link className='login' to='/' onClick={() => dispatch(logout())}>Cerrar sesion</Link>
             </div>
         </div>
