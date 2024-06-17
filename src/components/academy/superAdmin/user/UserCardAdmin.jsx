@@ -53,9 +53,7 @@ const userCardAdmin = ({user}) => {
     }
   };
         const submit = async (data) =>{
-          
           setMConfirm(true)
-          
           try {
             axios.put(`/users/${user.id}`, { role: selectedRole });
             try{

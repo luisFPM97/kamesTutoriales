@@ -16,14 +16,16 @@ const CreateCategoria = ({setConsCat}) => {
         const body = {...categoriaData}
         try{
             await axios.post('/categorias', body)
-            setConsCat(true)
-        }finally{
             reset()
+        }catch (error) {
+          console.error('Error updating resource:', error);
+          
         }
       }
+      
 
   return (
-    <div>
+    <div className='createCategoria'>
         <h1>Crear Categoria</h1>
         <form action=""  onSubmit={handleSubmit(submit)}>
             <label for="nombre">Nombre:</label><br />
