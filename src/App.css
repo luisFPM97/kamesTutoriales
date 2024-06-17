@@ -75,6 +75,30 @@
         background-color: transparent;
         border: 2px solid yellow;
         color: white;
+        background-color: #272727;
+      }
+      .menu{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .btncolAdnmin{
+          cursor: pointer;
+        }
+        .contenedor{
+          position: absolute;
+          display: flex;
+          gap: 5px;
+          flex-direction: column;
+          height: auto;
+          top: 100%;
+          
+        }
+        .Collapse{
+          visibility: hidden;
+        }
+        .Expand{
+          visibility: visible;
+        }
       }
     }
   }

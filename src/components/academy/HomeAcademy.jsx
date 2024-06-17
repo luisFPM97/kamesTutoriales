@@ -15,6 +15,7 @@ const HomeAcademy = () => {
       axios.get('/users/me')
       .then(res => setMe(res.data))
     }, [])
+    console.log(me)
     
     
     
