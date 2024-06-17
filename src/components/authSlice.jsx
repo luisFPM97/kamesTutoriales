@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios from '../utils/axios';
+
 
 
 export const authSlice = createSlice({
