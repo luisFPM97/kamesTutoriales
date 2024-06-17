@@ -10,6 +10,7 @@ import MePage from './components/academy/MePage'
 import AdminRole from './components/academy/superAdmin/AdminRole'
 import VerificateEmail from './components/verificateEmail/VerificateEmail'
 import Home from './components/home/Home'
+import AdminCategoria from './components/academy/superAdmin/AdminCategoria'
 
 function App() {
   const dispatch = useDispatch()
