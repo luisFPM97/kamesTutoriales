@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from '../../../../utils/axios'
 import { useForm } from 'react-hook-form'
 
-const CategoriaId = ({categoria, setConsCat}) => {
+const CategoriaId = ({categoria, setConsCat, setInfoCat,infoCat}) => {
 
-    
-    const { handleSubmit, register, reset, formState: { errors } } = useForm()
-    
-    
+    const [focus, setFocus] = useState(false)
+    const { handleSubmit, formState: { errors } } = useForm()
     const submit = async (id) =>{
           setConsCat(true)
         try {
@@ -16,15 +14,17 @@ const CategoriaId = ({categoria, setConsCat}) => {
         } catch (error) {
           console.error('Error udeleting resource:', error);
         }
-        
-        
     }
-
+    function setinfocatparams(params) {
+      setInfoCat(categoria)
+      setFocus(prevState => !prevState);
+    }
+console.log(categoria)
   return (
-    <div className='categoriaId' onSubmit={handleSubmit(submit)}>
-        <h2 className='nombre'>{categoria.name}</h2>
-        <p className='descripcion'>{categoria.description}</p>
+    <div className={infoCat===categoria?'categoriaId focus':'categoriaId'} onSubmit={handleSubmit(submit)}>
+        <h2 className='nombre' onClick={setinfocatparams}>{categoria.name}</h2>
         <button onClick={submit}>X</button>
+        
     </div>
   )
 }

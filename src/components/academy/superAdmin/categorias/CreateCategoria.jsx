@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import axios from '../../../../utils/axios';
 
-const CreateCategoria = ({setConsCat}) => {
+const CreateCategoria = ({setConsCat, isOpen, setIsOpen}) => {
 
     const {
         register,
@@ -23,9 +23,13 @@ const CreateCategoria = ({setConsCat}) => {
         }
       }
       
+      function close() {
+        setIsOpen(prevState => !prevState);
+      }
 
   return (
-    <div className='createCategoria'>
+    <div className={isOpen? "createCategoria " : "createCategoria isClose" } >
+
         <h1>Crear Categoria</h1>
         <form action=""  onSubmit={handleSubmit(submit)}>
             <label for="nombre">Nombre:</label><br />
@@ -35,8 +39,9 @@ const CreateCategoria = ({setConsCat}) => {
             <br />
             <textarea id="descripcion" name="descripcion" {...register("description", {required: true})}></textarea>
             <br />
-            <button>Crear</button>
+            <button className=''>Crear</button>
         </form>
+        <button className='btnClose' onClick={close}>X</button>
     </div>
   )
 }

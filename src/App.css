@@ -699,26 +699,88 @@
 }
 /*administrar categorias*/
 .adminCategorias{
-  width: 100%;
+  min-width:98vw;
   height: auto;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: start;
+  padding-top: 100px;
   position: relative;
+  .addCat{
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    height: 60px;
+    width: 150px;
+    border: 3px solid #ffc000;
+    background-color: #272727;
+    border-radius: 20px;
+  }
   .createCategoria{
     position: fixed;
-    top: 150px;
-    left: 50px;
-    width: 250px;
+    z-index: 999;
+    width: 300px;
+    height: 350px;
+    top: 100px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border: 1px solid black;
+    border-radius: 20px;
+    box-shadow:0 0 20px #ffbf0071;
+    background-color:#F0F0F0;
+    color: black;
+    overflow: hidden;
+    input{
+      background-color: transparent;
+      border: none;
+      border-bottom:1px solid #272727;
+    }
+    textarea{
+      background-color: transparent;
+      border: none;
+      border-bottom:1px solid #272727;
+      color: black;
+    }
+    .btnCrear{
+      background-color: #272727;
+      height: 30px;
+      width: 60px;
+      border-radius: 8px;
+      border:1px solid  #ffc000;
+      font-weight: bold;
+    }
+    .btnCrear:hover{
+      background-color: green;
+    }
+    .btnClose{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border-radius: 50%;
+      width: 30px;
+      aspect-ratio: 1;
+      background-color: #ffc000;
+      color: black;
+      font-weight: bold;
+      border: none;
+      transition: all0.2s ease-in-out;
+    }
+    .btnClose:hover{
+      background-color: #e94e1b;
+      color: white;
+    }
+  }
+  .isClose{
+    visibility: hidden;
   }
   .catsCont{
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-   
     .catEncabezado{
       width: 60%;
       min-width: 700px;
@@ -760,45 +822,116 @@
         color: white;
       }
     }
-    .categoriaId{
-      
-      height: 80px;
+    .listcat{
       display: flex;
-      align-items: center;
-      width: 60%;
-      min-width: 700px;
-      
-      .nombre{
-        width: 30%;
+      width: 100%;
+      .categoriaId{
         height: 80px;
-        border: 1px solid black;
         display: flex;
-        justify-content: center;
         align-items: center;
-      }
-      .descripcion{
         width: 60%;
-        height: 80px;
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      button{
-        border-radius: 50%;
-        border: none;
-        height: 30px;
-        aspect-ratio: 1;
-        font-weight: bold;
-        margin-left: 10px;
-        background-color: #ffc000;
-        color: black;
+        width: 300px;
+        border-radius: 20px 20px 0px 0px;
+        background-color: #1d1d1d;
+        position: relative;
         transition: all 0.2s ease-in-out;
-      }
-      button:hover{
-        background-color: #e94e1b;
+        cursor: pointer;
+        .nombre{
+          width: 100%;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         
-        color: white;
+        .descripcion{
+          width: 60%;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+        }
+        button{
+          border-radius: 50%;
+          border: none;
+          height: 30px;
+          aspect-ratio: 1;
+          font-weight: bold;
+          background-color: #ffc000;
+          color: black;
+          transition: all 0.2s ease-in-out;
+          position: absolute;
+          right: 10px;
+        }
+        button:hover{
+          background-color: #e94e1b;
+          
+          color: white;
+        }
+      }
+      .categoriaId:hover{
+        background-color: #747474;
+      }
+      .categoriaId:focus{
+        background-color: #747474;
+      }
+      .focus{
+        background-color: #747474;
+      }
+      .listarcurso{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 80px;
+      }
+    }
+    .contenedorCategoria{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 5px;
+      .cursoId{
+        display: flex;
+        width: 90%;
+        height: 250px;
+        border-radius: 30px;
+        overflow: hidden;
+        gap: 20px;
+        background-color:#747474;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        img{
+          border: 1px solid black;
+          width: 350px;
+          height: 100%;
+          border-radius: 30px;
+        }
+        .descript{
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: space-around;
+          .info, .instructor{
+            display: flex;
+          flex-direction: column;
+          align-items: start;
+          .subName{
+            font-weight: bold;
+            color: black;
+            font-size: 20px;
+          }
+          .subP{
+            font-size: 18px;
+            color:#1d1d1d;
+          }
+          }
+        }
+      }
+      .cursoId:hover{
+        transform: scale(1.01);
       }
     }
   }
