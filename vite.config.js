@@ -7,5 +7,8 @@ export default defineConfig({
   server:{
     open: true,
     host: true
-  }
+  },
+  images: {
+    domains: ["drive.google.com"],
+  },
 })

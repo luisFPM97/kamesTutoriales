@@ -39,7 +39,7 @@ const CreateCategoria = ({setConsCat, isOpen, setIsOpen}) => {
             <br />
             <textarea id="descripcion" name="descripcion" {...register("description", {required: true})}></textarea>
             <br />
-            <button className=''>Crear</button>
+            <button className='' onClick={close}>Crear</button>
         </form>
         <button className='btnClose' onClick={close}>X</button>
     </div>
