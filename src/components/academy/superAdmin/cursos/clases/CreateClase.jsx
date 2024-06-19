@@ -21,7 +21,7 @@ const CreateClase = (cursoId) => {
         
     }
     useEffect(() => {
-      axios.get(`/clases`)
+      axios.get(`/cursos`)
       .then(res =>{
         setInfoclases(res.data)
       })
