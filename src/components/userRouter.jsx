@@ -4,6 +4,7 @@ import MePage from "./academy/MePage";
 import AdminCategoria from "./academy/superAdmin/AdminCategoria";
 import AdminRole from "./academy/superAdmin/AdminRole";
 import AdministrarCursos from "./academy/superAdmin/AdministrarCursos";
+import Admincurso from "./academy/superAdmin/cursos/Admincurso";
 import Home from "./home/Home";
 import ProtectedRoute from "./protectedRouter/ProtectedRoute";
 
