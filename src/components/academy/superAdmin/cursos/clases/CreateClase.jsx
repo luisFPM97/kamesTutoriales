@@ -21,7 +21,7 @@ const CreateClase = (cursoId) => {
         
     }
     useEffect(() => {
-      axios.get('/clases')
+      axios.get(`/clases`)
       .then(res =>{
         setInfoclases(res.data)
       })
@@ -36,6 +36,7 @@ const CreateClase = (cursoId) => {
             <input className='catId' type="text" value={cursoId.cursoId} {...register("cursoId", {required: true})}  />
             <button>crear</button>
             <span >X</span>
+            
     </form>
   )
 }
