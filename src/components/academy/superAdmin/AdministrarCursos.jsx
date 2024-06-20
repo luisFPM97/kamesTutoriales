@@ -35,12 +35,12 @@ const AdministrarCursos = () => {
   useEffect(() => {
     console.log(value)
   }, [])
-  console.log(value)
+
   
   return (
     <div>
         <ReactQuill modules={module} theme="snow" value={value} onChange={setValue} />
-        <div dangerouslySetInnerHTML={{ __html: value }} />
+        <div  dangerouslySetInnerHTML={{ __html: value }} />
     </div>
   )
 }
