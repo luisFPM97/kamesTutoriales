@@ -14,9 +14,7 @@ const AdminCategoria = () => {
     const [longCat, setLongCat] = useState(0)
     const [formCat, setFormCat] = useState(false)
     
-    const cadena = "https://drive.google.com/file/d/1d1_P_H36UeYuP_cLzxTOrr3GKhVjpHem/view?usp=sharing";
-    const cadenaModificada = cadena.replace("view", "preview");
-    console.log(cadenaModificada);
+    
     
     const [infoCat, setInfoCat] = useState({})
     
@@ -37,7 +35,7 @@ const AdminCategoria = () => {
             .then(res => {
               const categoriasOrdenadas = res.data.sort((a, b) => a.id - b.id);
               setCategorias(categoriasOrdenadas);
-              console.log(categorias)
+              
             });
         }
 
@@ -87,16 +85,19 @@ const AdminCategoria = () => {
                 <h1>Categorias</h1>
                 <div className='listcat'>
                 {
+                    categorias.length > 0 ?
                     categorias.map((categoria, index) => (
-                        <CategoriaId
-                            key={index}
-                            categoria={categoria}
-                            setConsCat={setConsCat}
-                            setInfoCat={setInfoCat}
-                            infoCat={infoCat}
-                            longCat={longCat}
-                        />
-                    ))
+                      <CategoriaId
+                          key={index}
+                          categoria={categoria}
+                          setConsCat={setConsCat}
+                          setInfoCat={setInfoCat}
+                          infoCat={infoCat}
+                          longCat={longCat}
+                      />
+                  ))
+                  :
+                  <div>No hay categorias creadas</div>
                 }
                 </div>
                 {

@@ -2,9 +2,7 @@ import React from 'react'
 import CreateClase from './clases/CreateClase'
 
 const Admincurso = ({idCurso,defCurso, curso}) => {
-    console.log(idCurso)
-    console.log(defCurso)
-    console.log(curso)
+
     
 
   return (

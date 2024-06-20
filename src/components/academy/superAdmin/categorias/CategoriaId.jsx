@@ -19,7 +19,7 @@ const CategoriaId = ({categoria, setConsCat, setInfoCat,infoCat}) => {
       setInfoCat(categoria)
       setFocus(prevState => !prevState);
     }
-console.log(categoria)
+
   return (
     <div className={infoCat===categoria?'categoriaId focus':'categoriaId'} onSubmit={handleSubmit(submit)}>
         <h2 className='nombre' onClick={setinfocatparams}>{categoria.name}</h2>

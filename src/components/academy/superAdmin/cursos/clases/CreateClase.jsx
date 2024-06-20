@@ -7,7 +7,7 @@ const CreateClase = (cursoId) => {
     console.log(cursoId)
 
     const {register,handleSubmit,reset,formState: { errors },} = useForm();
-    const [infoclases, setInfoclases] = useState({})
+    
 
     const submit = async cursoData =>{
         const body = {...cursoData}
@@ -20,13 +20,7 @@ const CreateClase = (cursoId) => {
         }
         
     }
-    useEffect(() => {
-      axios.get(`/cursos`)
-      .then(res =>{
-        setInfoclases(res.data)
-      })
-    }, [])
-    console.log(infoclases)
+    
     
   return (
     <form onSubmit={handleSubmit(submit)} >
