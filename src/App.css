@@ -945,7 +945,7 @@
         .cursoId{
           display: flex;
           width: 90%;
-          border-radius: 15px;
+          border-radius: 5px;
           overflow: hidden;
           padding-left: 20px;
           gap: 20px;
