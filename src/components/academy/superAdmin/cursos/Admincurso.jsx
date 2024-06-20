@@ -6,8 +6,7 @@ const Admincurso = ({idCurso,defCurso, curso}) => {
     
 
   return (
-    <div className={defCurso?'Admincurso':'Admincurso AdmincursoHidden'}>
-        <h2>{curso.name}</h2>
+    <div className={defCurso?'Addclase':'Admincurso AdmincursoHidden'}>
         <p>{curso.description}</p>
         <button>Agregar Item</button>
         <CreateClase

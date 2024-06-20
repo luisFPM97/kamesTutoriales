@@ -19,6 +19,7 @@
     height: 40vh;
   }
 }
+/*navbar pagina*/
 .navBar{
   position: fixed;
   z-index: 997;
@@ -115,9 +116,94 @@
     }
   }
 }
+    /*navbar administrador*/
+.navBarAdmin{
+ background-color: #3b3737;
+ width: 250px;
+ min-height: 100vh;
+ padding-top: 30px;
+ display: flex;
+ justify-content: start;
+ flex-direction: column;
+ overflow: hidden;
+ position: fixed;
+ z-index: 999;
+ left: 0;
+ overflow: hidden;
+ .logoHome{
+  display: flex;
+  width: 100%;
+  position: relative;
+  .linkLogo{
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+ }
+ b{
+  cursor: pointer;
+ }
+ .pagesSec{
+  padding-top: 10px;
+  display: flex;
+  
+  width: 100%;
+  height: auto;
+  padding-left: 10px;
+  .navPages{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    .login, .home{
+      color: white;
+    }
+    .logOut{
+      color: rgb(73, 0, 0);
+      font-weight: bold;
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      font-size: 25px;
+    }
+    .logOut:hover{
+      color: red;
+    }
+    .login:hover, .home:hover{
+      color:#ffc000;
+    }
+    .menu{
+      display: flex;
+      flex-direction: column;
+      .btncolAdnmin{
+        cursor: pointer;
+      }
+      .contenedor{
+        display: flex;
+        flex-direction: column;
+      }
+      .Collapse{
+        visibility: hidden;
+        height: 0;
+      }
+    }
+    
+  }
+ }
+}
+.container{
+  width: calc(100% - 250px);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/*pages*/
 .homeP{
   width:100% ;
   margin: 0;
+  overflow: hidden;
   .header{
     display: flex;
     width: 100%;
@@ -557,10 +643,11 @@
 .loginPF{
   visibility: hidden;
 }
-.homeacademy{
+.homeAcademy{
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: white;
@@ -581,12 +668,12 @@
     padding-bottom: 10px;
   }
   .encabezado{
-    width: 900px;
+    width: 95%;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 21px;
+    font-size: 15px;
     
     .nombre{
       width: 33%;
@@ -622,7 +709,7 @@
     }
   }
   .cardUserAdmin{
-    width: 900px;
+    width: 95%;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -630,11 +717,13 @@
     padding: 0;
     h2{
       width: 33%;
+      font-size: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       border: 1px solid black;
       height: 100%;
+      overflow: hidden;
     }
     
     p{
@@ -644,6 +733,7 @@
       align-items: center;
       border: 1px solid black;
       height: 100%;
+      font-size: 15px;
     }
     .userRoleS{
       width: 16.5%;
@@ -652,6 +742,7 @@
       align-items: center;
       border: 1px solid black;
       height: 100%;
+      font-size: 15px;
     }
     form{
       width: 16.5%;
@@ -664,6 +755,9 @@
       input{
         visibility: hidden;
         height: 0px;
+      }
+      select{
+        width: 95%;
       }
     }
     input{
@@ -683,7 +777,7 @@
     }
   }
   .footerTable{
-    width: 900px;
+    width: 95%;
     height: 50px;
     display: flex;
     justify-content: end;
@@ -699,7 +793,7 @@
 }
 /*administrar categorias*/
 .adminCategorias{
-  min-width:98vw;
+  width: 100%;
   height: auto;
   min-height: 100vh;
   display: flex;
@@ -709,7 +803,8 @@
   position: relative;
   .addCat{
     position: fixed;
-    top: 100px;
+    z-index: 999;
+    bottom: 30px;
     right: 30px;
     height: 60px;
     width: 150px;
@@ -826,14 +921,16 @@
     }
     .listcat{
       display: flex;
+      flex-direction: column;
+      overflow: hidden;
       width: 100%;
       .categoriaId{
-        height: 80px;
+        min-height: 70px;
+        height: auto;
         display: flex;
         align-items: center;
-        width: 60%;
-        width: 300px;
-        border-radius: 20px 20px 0px 0px;
+        width: 95%;
+        border-radius: 5px;
         background-color: #1d1d1d;
         position: relative;
         transition: all 0.2s ease-in-out;
@@ -842,7 +939,7 @@
           width: 100%;
           height: 80px;
           display: flex;
-          justify-content: center;
+          padding-left: 5%;
           align-items: center;
         }
         
@@ -880,6 +977,67 @@
       }
       .focus{
         background-color: #747474;
+      }
+      .contenedorCategoria{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        gap: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .linkCursoId{
+          width: 98%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .cursoId{
+            display: flex;
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            padding-left: 20px;
+            gap: 20px;
+            background-color:#747474;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            .descript{
+              display: flex;
+              align-items: start;
+              justify-content: space-around;
+              .info, .instructor{
+                display: flex;
+                align-items: start;
+                .subName{
+                  font-weight: bold;
+                  color: black;
+                  font-size: 20px;
+                }
+                
+              }
+            }
+          }
+          .cursoId:hover{
+            transform: scale(1.01);
+            z-index: 998;
+          }
+          
+        }
+        .Admincurso{
+          width: 95%;
+          display: flex;
+          border: 1px solid black;
+          justify-content: space-around;
+          align-items: center;
+          height: 100px;
+          border-radius: 5px;
+          background-color: #1d1d1d;
+          img{
+            height: 100%;
+          }
+        }
       }
       .listarcurso{
         display: flex;
@@ -928,56 +1086,12 @@
         visibility: hidden;
       }
     }
-    .contenedorCategoria{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      gap: 15px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      .linkCursoId{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .cursoId{
-          display: flex;
-          width: 90%;
-          border-radius: 5px;
-          overflow: hidden;
-          padding-left: 20px;
-          gap: 20px;
-          background-color:#747474;
-          transition: all 0.2s ease-in-out;
-          cursor: pointer;
-          .descript{
-            display: flex;
-            align-items: start;
-            justify-content: space-around;
-            .info, .instructor{
-              display: flex;
-              align-items: start;
-              .subName{
-                font-weight: bold;
-                color: black;
-                font-size: 20px;
-              }
-              
-            }
-          }
-        }
-        .cursoId:hover{
-          transform: scale(1.01);
-        }
-      }
-    }
+    
   }
 }
 .AdmincursoHidden{
   visibility: hidden;
-  height: 0;
+  height: 0 !important;
 }
 .linkCursoId{
   display: flex;

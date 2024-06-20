@@ -74,13 +74,13 @@ const AdminCategoria = () => {
 
   return (
     <div className='adminCategorias' onContextMenu={(e) => e.preventDefault()}>
-        <CreateCategoria
-            setConsCat={setConsCat}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-        />
-        
             <button className='addCat' onClick={close}>Agregar categoria</button>
+            <CreateCategoria
+                setConsCat={setConsCat}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+            />
+
             <div className='catsCont'>
                 <h1>Categorias</h1>
                 <div className='listcat'>
@@ -94,35 +94,17 @@ const AdminCategoria = () => {
                           setInfoCat={setInfoCat}
                           infoCat={infoCat}
                           longCat={longCat}
+                          
                       />
                   ))
                   :
                   <div>No hay categorias creadas</div>
                 }
                 </div>
-                {
-                    infoCat.name &&
-                    <div className='crearModulo'>
-                        <button onClick={switchFormCat}>AÑADIR {infoCat.name}</button>
-                        <Createcurso
-                        CategoriaId={infoCat.id}
-                        setConsCat={setConsCat}
-                        setFormCat={setFormCat}
-                        formCat={formCat}
-                        />
-                    </div>
-                }
-                <div className='contenedorCategoria'>
-                {infoCat.cursos &&
-                infoCat.cursos.sort((a, b) => a.id - b.id).map((curso, i) => (
-                    <Curso
-                    key={i}
-                    curso={curso}
-                    />
-                ))}
-                   
-                </div>
+                
+                
             </div>
+            
             <div className='vidoPlayer'><div data-dyntube-key="ZZcMlp3X0qQhjTnZHXSAQ"></div></div>
         
     </div>

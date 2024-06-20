@@ -4,7 +4,6 @@ import axios from '../../../../../utils/axios';
 
 const CreateClase = (cursoId) => {
 
-    console.log(cursoId)
 
     const {register,handleSubmit,reset,formState: { errors },} = useForm();
     

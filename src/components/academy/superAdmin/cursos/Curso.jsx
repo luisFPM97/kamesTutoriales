@@ -31,7 +31,7 @@ const Curso = ({curso}) => {
             (clase) => clase.cursoId === curso.id
         )))
     }
-    console.log(infoclases)
+
     
 
   return (
