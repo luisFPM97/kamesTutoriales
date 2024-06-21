@@ -41,6 +41,7 @@ const AdministrarCursos = () => {
     <div>
         <ReactQuill modules={module} theme="snow" value={value} onChange={setValue} />
         <div  dangerouslySetInnerHTML={{ __html: value }} />
+        <a href="https://biz.payulatam.com/B0f6a52E84BAE3D"><img src="https://ecommerce.payulatam.com/img-secure-2015/boton_pagar_mediano.png"/></a>
     </div>
   )
 }

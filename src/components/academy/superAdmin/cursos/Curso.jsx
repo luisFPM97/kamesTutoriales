@@ -59,6 +59,7 @@ const Curso = ({curso}) => {
         ))
         : <p>No hay clases en este curso</p>
     }
+    
     </>
   )
 }
